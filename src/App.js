@@ -6,8 +6,9 @@ import wiki from "./files/wiki.png";
 class App extends React.Component{
 
   state = {
-    title:"No search results",
-    data:[]
+    title:"",
+    description:"",
+    link:"",
   }
 
   handleSubmit = (e) => {
@@ -21,12 +22,18 @@ class App extends React.Component{
       return data.json()
     })
     .then(response => {
-      let results=[]
-      for (let i = 0; i < response[1].length; i++) {
-           results.push({title:response[1][i],description:response[2][i],link:response[3][i]})     
-      }
-        
-      this.setState({title:response[0], data:results})
+      this.setState({
+        title:response.map(result => {
+          return <Results 
+              title={result[1]}
+              // description={result[2]}
+              // link={result[3]}
+
+          />
+        })
+      })
+      
+
         
     })
     .catch(error => {
@@ -45,13 +52,7 @@ class App extends React.Component{
     // })
     // alert(userSearch);
 
-  makelist = () => {
-    let results = this.state.data.map((data,key) => {
-      return <Results key={key} data={data}/>
-    })
 
-    return results;
-  }
 
   render(){
     return (
@@ -62,19 +63,20 @@ class App extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <div className="text-center " id="searchInfo">    
             <input name="userSearch" id="userSearch" type="text" placeholder="Search..." />
-            <button className="btn btn-primary " ><i className="fa fa-search"></i></button>   
+            <button className="btn btn-primary " ><i className="fa fa-search"></i></button>
+            
+            <div className="container" >
+              {this.state.title}
+              {/* {this.state.description}
+              {this.state.link} */}
+              
+            </div>
+    
           </div>
         </form>
 
-        <div className="container text-center" >
-              You Searched: {this.state.title.toLocaleUpperCase()}
-              
-              { this.makelist() }
-        </div>
-        <div className="text-center mt-5">
-          <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" rel="noopener noreferrer"><button type="submit">Random Wiki</button></a>
-          <p>Made by <a href="https://lilnop.github.io/lilnop/" target="_blank" rel="noopener noreferrer"><span className="italic">Robert Sarpong</span></a></p>
-        </div>
+  
+       
   
       </div>
     );
