@@ -1,20 +1,27 @@
 body {
   margin: 0;
-  font-family: lobster,-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'Mukta Mahee',-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif;
+  /* font-family: lobster,-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:#8946aa;
-  color:white;
+  /* background-color:#8946aa; */
+  background-color:#f1ecf3;
+  color:rgb(0, 0, 0);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.italic{
+h1{
+  font-family: lobster,"Segoe UI", "Roboto",sans-serif;
+}
+.name{
   font-style:italic;
+  color:black;
 }
 
 .wikiImg{
@@ -41,38 +48,49 @@ input[type=text] {
   width:100px;
   /* padding:8px; */
   margin-bottom:3px;
+  background: #19191a;
+}
+.btn:hover{
+  background-color:#494849;
 }
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
-  width: 20%;
+  width: 15%;
 }
 
 button{
   padding:10px;
-  background-color:#5c52ec;
+  background-color:#19191a;
   color:rgb(255, 255, 255);
   cursor:pointer;
-  border-radius:3px;
+  border-radius:8px;
   font-family: 'Mukta Mahee', sans-serif;
 }
 button:hover{
-  background-color:#5d2368;
+  background-color:#302f30;
 }
 
+.results{
+  text-align: left;
+  list-style-type: none;
+  background: #19191a;
+  color:#fff;
+  font-family: Arial, Helvetica, sans-serif;
+  margin:1.5px;
+  padding-left:2px;
+}
+.results li{
+  margin-left: 5px;
+}
+.results:hover{
+  background-color:#302f30;
+}
 a{
-  color:white;
-  text-decoration:none;
+  color:#fff;
 }
 a:hover{
-  color:white;
-  text-decoration:underline;
-}
-a:link:{
+  color:#fff;
+  }
+a:link{
   text-decoration:none;
 }
-a:visited{
-  text-decoration:none;
-}
-p{ 
-  font-family: 'Mukta Mahee', sans-serif;
-} 

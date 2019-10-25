@@ -3,11 +3,12 @@ import React from 'react';
 const Results = (props) => {
 
     return(
-        <div style={{elevation:10,justifyContent:'center',flexDirection:'row'}}>
-            <h2>{props.title }</h2>
-            <p>{props.description}</p>
-            <p>{props.link}</p>          
-        </div>
+        <ul className="results">
+            <a href={props.link} target="_blank" rel="noopener noreferrer">
+                <li><h2>{props.title }</h2></li>
+                <li>{props.description}</li>
+            </a>
+        </ul>
     )
 }
 
